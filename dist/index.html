@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16324f">
+  <meta name="description" content="A calm weekly study planner built around school, prayer, private classes, and rest.">
+  <title>My Weekly Study Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Your week, at a glance</p>
+        <h1>Study with rhythm.<br><em>Rest without guilt.</em></h1>
+        <p class="intro">A calm plan built around school, salah, private classes, and proper breaks.</p>
+      </div>
+
+      <div class="clock-card" aria-live="polite">
+        <span class="clock-label">Muscat time</span>
+        <strong id="live-time">--:--:--</strong>
+        <span id="live-date">Loading date…</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="week-overview" aria-labelledby="week-title">
+        <div>
+          <p class="section-kicker">Weekly progress</p>
+          <h2 id="week-title"><span id="done-count">0</span> of <span id="total-count">0</span> activities done</h2>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-track" aria-hidden="true">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="reset-note">
+          <span class="reset-dot" aria-hidden="true"></span>
+          <span>Fresh week in <strong id="reset-countdown">—</strong></span>
+        </div>
+      </section>
+
+      <nav class="day-tabs" aria-label="Choose a day" id="day-tabs"></nav>
+
+      <section class="schedule-panel" aria-live="polite">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker" id="day-kicker">Today</p>
+            <h2 id="day-title">Sunday</h2>
+          </div>
+          <p id="day-summary" class="day-summary"></p>
+        </div>
+
+        <div id="schedule-list" class="schedule-list"></div>
+      </section>
+
+      <section class="weekend-card">
+        <div class="weekend-mark" aria-hidden="true">☀</div>
+        <div>
+          <p class="section-kicker">Thursday</p>
+          <h2>Your full reset day</h2>
+          <p>No fixed study blocks. Rest, enjoy your time, and come back refreshed for Friday morning.</p>
+        </div>
+      </section>
+
+      <section class="study-tip" aria-label="Study tip">
+        <span>Small rule, big difference</span>
+        <p>During independent study: focus for <strong>45–50 minutes</strong>, then step away for <strong>10 minutes</strong>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><span id="save-status">Saved on this device</span> · Automatically resets Sunday at noon.</p>
+      <button type="button" class="text-button" id="clear-week">Reset this week</button>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="planner-core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
